@@ -11,7 +11,6 @@ namespace AdminImage.Controllers
         // GET: Dropdown
         public ActionResult Index()
         {
-            // Code changes
             return View();
         }
     }
