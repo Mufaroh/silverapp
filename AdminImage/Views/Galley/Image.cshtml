@@ -1,0 +1,36 @@
+﻿@model List<AdminImage.ImageGallery>
+
+@{
+    ViewBag.Title = "Image";
+}
+
+<h2>Image</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Upload")
+</p>
+<table class="table">
+  @{ 
+      int j = 0;
+      for (int i = 0; i < Model.Count(); i += 4)
+      {
+          j = 1;
+     <tr>
+
+          @*The 4 images on the row *@
+    @while (j < i + 4 && j < Model.Count())
+    {
+          <td>
+              <img src="data:image/png;base64,@Convert.ToBase64String(Model[j].ImageData, 0, Model[j].ImageData.Length)" width="100"/>
+              </td>
+        j++;
+    }
+
+      </tr>
+          }
+          
+
+          }
+
+      
+</table>
